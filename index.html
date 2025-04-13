@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--länk till font-awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <!--I headern finns den aktuella tiden och dagens datum.-->
+        <div class="time-date">
+            <p id="time"></p>
+            <p id="date"></p>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <!--Titeln är "contenteditable" vilket innebär att den är redigerbar.-->
+            <div class="title-div">
+                <h1 id="title" contenteditable="true">Idas Dashboard</h1>
+            </div>
+
+            <div class="box-container">
+
+                <!--I "box-containern finns dom 4 boxarna med olika innehåll."-->
+                <div class="boxes" id="box1">
+                    <h3>Snabblänkar</h3>
+                    <!--Länklistan fylls på genom JavaScript.-->
+                    <div id="links-list"></div>
+                    <!--När man trycker på knappen öppnas en ruta där man får fylla i en länk man vill spara.-->
+                    <button class="add-link" onclick="openPopup()"><i class="fa-solid fa-circle-plus"></i> Lägg till
+                        länk</button>
+                </div>
+
+                <!--Den här boxen visar väder. Vädret hämtas från en API.-->
+                <div class="boxes" id="box2">
+                    <h3>Dagens väder</h3>
+                    <div class="weather-container">
+                        <p class="weather-date">Idag, nuvarande temp:</p>
+                        <p id="temp1"></p>
+                    </div>
+                    <div class="weather-container">
+                        <p class="weather-date" id="weather-date1"></p>
+                        <p id="temp2"></p>
+                    </div>
+                    <div class="weather-container">
+                        <p class="weather-date" id="weather-date2"></p>
+                        <p id="temp3"></p>
+                    </div>
+                    <div class="weather-container">
+                        <p class="weather-date" id="weather-date3"></p>
+                        <p id="temp4"></p>
+                    </div>
+                </div>
+
+                <!--Den här boxen visar kommande konserter från Ticketmasters API.-->
+                <div class="boxes" id="box3">
+                    <h3>Kommande konserter</h3>
+                    <div class="concert-container">
+                        <p class="dates" id="date1"></p>
+                        <p id="concert1"></p>
+                    </div>
+                    <div class="concert-container">
+                        <p class="dates" id="date2"></p>
+                        <p id="concert2"></p>
+                    </div>
+                    <div class="concert-container">
+                        <p class="dates" id="date3"></p>
+                        <p id="concert3"></p>
+                    </div>
+                    <div class="concert-container">
+                        <p class="dates" id="date4"></p>
+                        <p id="concert4"></p>
+                    </div>
+                </div>
+
+                <!--Den här boxen kan spara anteckningar. Anteckningarna sparas genom JavaScriptet.-->
+                <div class="boxes">
+                    <form class="notes-form">
+                        <h3><label for="notes">Anteckningar</label></h3>
+                        <textarea id="notes" name="notes" rows="13" cols="25" maxlength="273"></textarea>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <!--Detta är rutan som poppar upp när man ska spara en länk. Den visas inte om
+        inte "add-link"-knappen inte trycks.-->
+        <div id="add-link-popup">
+            <form class="form-popup">
+                <h2>Lägg till länk</h2>
+                <label for="rubrik" class="lbl">Rubrik</label>
+                <input type="text" class="input" id="name-input">
+                <label for="url" class="lbl">Webbadress (glöm inte https://)</label>
+                <input type="url" class="input" id="url-input">
+                <button type="button" class="btn1" onclick="addLink()">Lägg till</button>
+                <button type="button" class="btn2" onclick="closePopup()">Avbryt</button>
+            </form>
+        </div>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

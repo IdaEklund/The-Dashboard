@@ -1,0 +1,294 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/*Bakgrundsbilden finns i body.*/
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('../Img/background.jpg');
+    background-size: cover;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5em;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    height: auto;
+    width: 100%;
+}
+
+/*Divven för tid och datum får en grid-layout.*/
+.time-date{
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 14em;
+    height: 1.8em;
+    background-color: rgb(211, 211, 211, 0.7);
+    opacity: 1;
+    border-radius: 2em;
+}
+
+#time{
+    grid-column: 1;
+    justify-self: right;
+    align-self: center;
+    font-weight: bold;
+    font-size: smaller;
+    margin: auto 0.5em auto 0;
+}
+
+#date{
+    grid-column: 2;
+    justify-self: left;
+    font-size: smaller;
+    margin: auto 0 auto 0.5em;
+}
+
+/*-------- Main ------------------*/
+
+/*Main-containern får en grid-layout så att jag enkelt
+ska kunna placera elementen där jag vill ha dom.*/
+.main-container{
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 90%;
+    height: auto;
+    margin: 0 10% auto 10%;
+}
+
+.title-div{
+    grid-row: 1;
+    width: auto;
+    justify-self: center;
+    height: 3.5em;
+    padding-top: 1em;
+    margin: 0 auto 5em auto;
+    color: white;
+}
+
+#title{
+    font-size: 3em;
+    font-weight: 700;
+}
+
+/*Boxarna fördelas på fler rader när skärmen krymper.*/
+.box-container{
+    grid-row: 2;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 5em auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boxes{
+    width: 14em;
+    height: 19em;
+    margin: 0 0.5em 0.5em 0;
+    padding: 2em;
+    background-color: rgb(211, 211, 211, 0.7);
+    border-radius: 2em;
+}
+
+/*---------LÄNK-BOXEN--------------*/
+
+#box1{
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+#box1 h3{
+    grid-row: 1;
+    justify-self: center;
+    font-weight: 200;
+    margin-top: 0;
+}
+
+#links-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-link{
+    all: unset;
+    grid-row: 6;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: gray;
+    color: white;
+    font-size: smaller;
+    height: 1.5em;
+    width: 8em;
+    padding: 0.3em;
+    border-radius: 0.5em;
+}
+
+.add-link:hover{
+    background-color: darkgray;
+    cursor: default;
+}
+
+.add-link i{
+    margin-right: 0.5em;
+}
+
+/*----------VÄDER-BOXEN-----------*/
+
+#box2{
+    display: flex;
+    flex-direction: column;
+}
+
+#box2 h3{
+    margin-bottom: 0.9em;
+    font-weight: 200;
+    align-self: center;
+}
+
+.weather-container{
+    align-items: center;
+    height: fit-content;
+    width: 12em;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-bottom: 0.3em;
+    padding: 0.5em;
+    font-size: smaller;
+    opacity: 1;
+}
+
+.weather-date{
+    font-weight: bold;
+}
+
+/*---------EVENEMANGS-BOXEN---------------*/
+
+#box3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em 1.5em 2em 1.5em;
+}
+
+#box3 h3{
+    margin-bottom: 0.9em;
+    font-weight: 200;
+    font-size: medium;
+    align-self: center;
+}
+
+.concert-container{
+    align-items: center;
+    height: fit-content;
+    width: 12em;
+    background-color: white;
+    border-radius: 0.5em;
+    margin-bottom: 0.3em;
+    padding: 0.5em;
+    font-size: smaller;
+}
+
+.dates{
+    font-weight: bold;
+}
+
+
+/*----------ANTECKNINGS-BOXEN-----------*/
+
+.notes-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.notes-form h3{
+    margin: auto auto 0.5em auto;
+    font-weight: 200;
+}
+
+#notes{
+    border-radius: 1em;
+    padding: 1em;
+}
+
+#notes-btn{
+    all: unset;
+    display: flex;
+    align-self: center;
+    text-align: center;
+    background-color: darkgray;
+    color: white;
+    font-size: smaller;
+    height: 1.5em;
+    width: 6em;
+    padding: 0.3em;
+    margin-top: 0.8em;
+    border-radius: 0.5em;
+}
+
+#notes-btn:hover {
+    background-color: gray;
+    cursor: default;
+}
+
+/*Popupen får en z-index-egenskap så att popupen ska
+dölja resten av sidan.*/
+#add-link-popup{
+    display: none;
+    z-index: 999;
+    position: fixed;
+    width: 30em;
+    height: 23em;
+    background-color: darkgray;
+    margin-left: 10em;
+    border-radius: 2em;
+}
+
+.form-popup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    margin: auto;
+    color: white;
+}
+
+h2{
+    padding: 1em;
+}
+
+.input{
+    width: 20em;
+    height: 2em;
+    padding: 0.2em;
+}
+
+.lbl{
+    padding: 0.5em;
+}
+
+.btn1{
+    margin: 2em auto 1em auto;
+    width: 5em;
+    height: 2em;
+}
+
+.btn2{
+    width: 5em;
+    height: 2em;
+}

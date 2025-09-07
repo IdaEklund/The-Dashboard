@@ -292,13 +292,18 @@ h2{
 .btn1{
     margin: 2em auto 1em auto;
     width: 5em;
+    min-width: fit-content;
     height: 2em;
+    min-height: fit-content;
 }
 
 .btn2{
-    width: 5em;
+   width: 5em;
+    min-width: fit-content;
     height: 2em;
+    min-height: fit-content;
 }
+
 
 /*------Villkor för popup-rutan vid mindre skärm------*/
 

@@ -253,11 +253,12 @@ dölja resten av sidan.*/
     display: none;
     z-index: 999;
     position: fixed;
-    width: 30em;
-    height: 23em;
+    width: fit-content;
+    height: fit-content;
     background-color: darkgray;
     margin-left: 10em;
     border-radius: 2em;
+    padding: 2em;
 }
 
 .form-popup{
@@ -267,6 +268,11 @@ dölja resten av sidan.*/
     padding: 1em;
     margin: auto;
     color: white;
+}
+
+.form-popup input{
+    width: 18em;
+    height: 2em;
 }
 
 h2{
@@ -292,4 +298,38 @@ h2{
 .btn2{
     width: 5em;
     height: 2em;
+}
+
+/*------Villkor för popup-rutan vid mindre skärm------*/
+
+@media (max-width: 661px) {
+  
+  #add-link-popup{  
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 535px) {
+  
+  #add-link-popup{  
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 500px) {
+  
+  #add-link-popup{  
+    margin-left: 5%;
+    margin-right: 5%;
+    justify-self: center;
+  }
+
+  .form-popup input{
+    width: 15em;
+    height: 2em;
+}
+
+.form-popup label{
+    flex-wrap: nowrap;
+}
 }

@@ -93,6 +93,7 @@ ska kunna placera elementen där jag vill ha dom.*/
 .boxes{
     width: 14em;
     height: 19em;
+    min-height: fit-content;
     margin: 0 0.5em 0.5em 0;
     padding: 2em;
     background-color: rgb(211, 211, 211, 0.7);
